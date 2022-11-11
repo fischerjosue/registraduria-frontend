@@ -153,7 +153,7 @@ Para correr este proyecto localmente debes seguir los siguientes pasos:
 
 ### 3. Compilar y correr el proyecto
 
-    $ npm run serve
+    $ npm run dev
 
 ### 4. Compilar y preparar para producción
 
