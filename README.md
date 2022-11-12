@@ -8,6 +8,8 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/iamjosuefischer/registraduria-frontend?color=00BAFF)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Language-yellow?logo=JavaScript)
 ![VueJS](https://img.shields.io/badge/VueJS-Framework-dargreen?logo=vuedotjs)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-Framework-cyan?logo=tailwindcss)
+![Vite](https://img.shields.io/badge/ViteJS-Tool-purple?logo=vite)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Database-green?logo=mongodb)
 
 # FRONT-END DEL PROYECTO
