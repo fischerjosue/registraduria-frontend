@@ -2,17 +2,17 @@
     <section class="dark:bg-gray-900">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-[calc(100vh-100px)] lg:py-0">
             <div
-                class="w-full rounded-3xl dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 registro-container">
+                class="w-full rounded-3xl dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 border">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                     <h1
                         class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Registrarse
                     </h1>
-                    <form class="space-y-4 md:space-y-6" action="#">
+                    <form class="space-y-4 md:space-y-6" v-on:submit.prevent="processSignUp">
                         <div>
                             <label for="nombre"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre"
+                            <input type="text" name="nombre" v-model="user.nombre" placeholder="Escribe tu nombre"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
                                 required>
                         </div>
@@ -20,14 +20,14 @@
                             <label for="email"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Correo
                                 electrónico</label>
-                            <input type="email" name="email" id="email"
+                            <input type="email" name="email" v-model="user.email"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
                                 placeholder="Escribe tu correo electrónico" required>
                         </div>
                         <div>
                             <label for="password"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
-                            <input type="password" name="password" id="password" placeholder="Crea una contraseña segura"
+                            <input type="password" name="password" v-model="user.password" placeholder="Crea una contraseña segura"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
                                 required>
                         </div>
@@ -46,11 +46,28 @@
     </section>
 </template>
 
-<style>
-.registro-container {
-    border: 1px solid #bfbfbf;
-}
-</style>
+<script>
+import axios from 'axios';
+export default {
+    data: function () {
+        return {
+            user: {
+                seudonimo: "",
+                correo: "",
+                contrasena: ""
+            }
+        }
+    },
+    methods: {
+        processSignUp: function () {
+            axios.post("http://127.0.0.1:8080/login", this.user, { headers: {} })
+                .then((result) => {
+                    localStorage.setItem("regPerfil", result.data.perfil)
+                    alert("Registro en progreso")
+                    this.$router.push({ name: "home" });
 
-<script setup>
+                })
+        }
+    }
+}
 </script>
