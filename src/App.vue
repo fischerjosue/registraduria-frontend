@@ -10,6 +10,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/">Inicio</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/about">Nosotros</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/login">Elecciones</RouterLink>
+      <RouterLink class="hover:text-gray-600 focus:text-black" to="/crearcandidato">Crear Candidato</RouterLink>
     </nav>
   </header>
 

@@ -8,7 +8,7 @@
                         class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Iniciar Sesión
                     </h1>
-                    <form class="space-y-4 md:space-y-6" v-on:submit.prevent="processLogInUser">
+                    <form class="space-y-4 md:space-y-6" v-on:submit.prevent="Login">
                         <div>
                             <label for="email"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Correo
@@ -53,19 +53,19 @@ export default {
         }
     },
     methods: {
-        processLogInUser: function () {
-            axios.post("http://127.0.0.1:8080/login/", this.user, { header: {} })
+        Login: function () {
+            /* , { header: {} } */
+            axios.post("http://127.0.0.1:7777/login", this.user)
                 .then((result) => {
                     let dataLogIn = {
-                        username: this.user.username,
-                        token_access: result.data.access,
-                        token_refresh: result.data.refresh,
+                        token: result.data.access,
+                        user_id: result.data.access
                     }
                     console.log(dataLogIn)
 
-                    let userId = jwt_decode(dataLogIn.token_access).user_id.toString();
+                    let userId = jwt_decode(dataLogIn.token).toString();
 
-                    axios.get(`http://127.0.0.1:8080/login/${userId}`)
+                    axios.get(`http://127.0.0.1:7777/login${userId}`)
                         .then((result) => {
                             console.log(result)
                             let perfil = result.data.perfil

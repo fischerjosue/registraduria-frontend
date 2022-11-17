@@ -1,4 +1,15 @@
 <template>
+  <div class="grid grid-cols-6 h-screen">
+    <div class="col-span-1 bg-blue-300">
+      <nav>
+        <ul class="flex-col p-2 font-bold ">
+          <li><a class="hover:bg-slate-700 hover:text-white px-4 w-full rounded-full underline uppercase" href="">home</a></li>
+          <li><button class="btn-primary">Candidatos</button></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-span-5 bg-red-200"></div>
+  </div>
   <div>
     <div class="overflow-x-auto mt-4 relative shadow-sm sm:rounded-lg">
       <table class="w-full text-xs md:text-sm text-center text-gray-500 dark:text-gray-400">
