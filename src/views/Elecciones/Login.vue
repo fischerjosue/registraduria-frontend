@@ -8,19 +8,19 @@
                         class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Iniciar Sesión
                     </h1>
-                    <form class="space-y-4 md:space-y-6" v-on:submit.prevent="Login">
+                    <form class="space-y-4 md:space-y-6" v-on:submit.prevent="login">
                         <div>
-                            <label for="email"
+                            <label for="correo"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Correo
                                 electrónico</label>
-                            <input type="email" name="email" v-model="user.correo"
+                            <input type="correo" name="correo" v-model="correo"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Escribe tu correo electrónico" required>
                         </div>
                         <div>
                             <label for="password"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
-                            <input type="password" name="password" v-model="user.contrasena"
+                            <input type="password" name="password" v-model="contrasena"
                                 placeholder="Ingresa tu contraseña"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 required>
@@ -40,50 +40,40 @@
     </section>
 </template>
 
+
 <script>
-import jwt_decode from 'jwt-decode';
-import axios from 'axios';
+import auth from "@/logic/auth";
 export default {
-    data: function () {
-        return {
-            user: {
-                correo: "",
-                contrasena: ""
+    name: "login",
+    data: () => ({
+        correo: "",
+        contrasena: "",
+        error: false
+    }),
+    methods: {
+        async login() {
+            try {
+                await auth.login(this.correo, this.contrasena);
+                const user = {
+                    correo: this.correo,
+                    contrasena: this.contrasena
+                };
+                auth.setUserLogged(user)
+                this.$router.push("/about");
+                console.log(user)
+            } catch (error) {
+                console.log(error);
+                this.error = true;
+                if (error.response.status == "401")
+                    alert("Credenciales Incorrectas.");
             }
         }
     },
-    methods: {
-        Login: function () {
-            /* , { header: {} } */
-            axios.post("http://127.0.0.1:7777/login", this.user)
-                .then((result) => {
-                    let dataLogIn = {
-                        token: result.data.access,
-                        user_id: result.data.access
-                    }
-                    console.log(dataLogIn)
-
-                    let userId = jwt_decode(dataLogIn.token).toString();
-
-                    axios.get(`http://127.0.0.1:7777/login${userId}`)
-                        .then((result) => {
-                            console.log(result)
-                            let perfil = result.data.perfil
-                            this.$emit('completedLogIn', dataLogIn, perfil)
-                        }).catch((error) => {
-                            console.log(error)
-                        });
-
-                }).catch((error) => {
-                    console.log(error)
-                    if (error.response.status == "401")
-                        alert("ERROR 401: Credenciales Incorrectas");
-                }
-                );
-
+    computed: {
+        userLogged() {
+            return auth.getUserLogged();
         }
-
     }
-}
+};
 
 </script>
