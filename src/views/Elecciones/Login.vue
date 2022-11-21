@@ -59,8 +59,8 @@ export default {
                     contrasena: this.contrasena
                 };
                 auth.setUserLogged(user)
-                this.$router.push("/about");
-                console.log(user)
+                // this.$router.push("/about");
+                // console.log(user)
             } catch (error) {
                 console.log(error);
                 this.error = true;

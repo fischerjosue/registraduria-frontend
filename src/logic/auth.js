@@ -1,12 +1,11 @@
 import axios from "axios";
-import jwt_decode from "jwt-decode";
 import Cookies from "js-cookie";
 
 const ENDPOINT_PATH = "http://127.0.0.1:7777/";
 
 export default {
-  setUserLogged(userLogged) {
-    Cookies.set("userLogged", userLogged);
+  setUserLogged(dataLogIn) {
+        Cookies.set("userLogged", dataLogIn,{ "token": dataLogIn.token });
   },
 
   getUserLogged() {
@@ -21,10 +20,7 @@ export default {
   async login(correo, contrasena) {
     const user = { correo, contrasena };
     const result = await axios.post(ENDPOINT_PATH + "login", user);
-    let dataLogIn = {
-      token: result.data,
-      user_id: result.data,
-    };
+    let dataLogIn = result.data
     console.log(dataLogIn);
   },
 };
