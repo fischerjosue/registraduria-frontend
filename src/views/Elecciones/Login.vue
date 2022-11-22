@@ -13,7 +13,7 @@
                             <label for="correo"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Correo
                                 electrónico</label>
-                            <input type="correo" name="correo" v-model="correo"
+                            <input type="text" name="correo" v-model="correo"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Escribe tu correo electrónico" required>
                         </div>
@@ -54,11 +54,11 @@ export default {
         async login() {
             try {
                 await auth.login(this.correo, this.contrasena);
-                const user = {
-                    correo: this.correo,
-                    contrasena: this.contrasena
-                };
-                auth.setUserLogged(user)
+                // const user = {
+                //     correo: this.correo,
+                //     contrasena: this.contrasena
+                // };
+                // auth.setUserLogged(user)
                 // this.$router.push("/about");
                 // console.log(user)
             } catch (error) {

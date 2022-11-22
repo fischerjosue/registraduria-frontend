@@ -5,7 +5,7 @@ const ENDPOINT_PATH = "http://127.0.0.1:7777/";
 
 export default {
   setUserLogged(dataLogIn) {
-        Cookies.set("userLogged", dataLogIn,{ "token": dataLogIn.token });
+        Cookies.set("userLogged", dataLogIn);
   },
 
   getUserLogged() {
@@ -20,7 +20,8 @@ export default {
   async login(correo, contrasena) {
     const user = { correo, contrasena };
     const result = await axios.post(ENDPOINT_PATH + "login", user);
-    let dataLogIn = result.data
+    let dataLogIn = result.data.token;
+    setUserLogged(dataLogIn);
     console.log(dataLogIn);
   },
 };
