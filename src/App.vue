@@ -8,19 +8,19 @@
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/">Inicio</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/about">Nosotros</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/login">Elecciones</RouterLink>
-      <RouterLink class="hover:text-gray-600 focus:text-black" to="/crearcandidato">Crear Candidato</RouterLink>
->>>>>>> master
+      <RouterLink class="hover:text-gray-600 focus:text-black" to="/dashboarduser">Usuario</RouterLink>
+      <a v-if="coki" href="">usuario</a>
     </nav>
   </header>
 
-  <AdminMenu />
-
   <RouterView />
+
 </template>
 
 
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import AdminMenu from "./components/admin/menu.vue"
-  /* import HelloWorld from './components/HelloWorld.vue' */
+<script>
+export default {
+  name: "App",
+
+};
 </script>
