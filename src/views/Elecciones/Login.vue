@@ -50,6 +50,11 @@ export default {
         contrasena: "",
         error: false
     }),
+    computed: {
+        userLogged() {
+            return auth.getUserLogged();
+        }
+    },
     methods: {
         async login() {
             try {
@@ -59,7 +64,7 @@ export default {
                 //     contrasena: this.contrasena
                 // };
                 // auth.setUserLogged(user)
-                // this.$router.push("/about");
+                this.$router.push("/dashboard");
                 // console.log(user)
             } catch (error) {
                 console.log(error);
@@ -69,11 +74,7 @@ export default {
             }
         }
     },
-    computed: {
-        userLogged() {
-            return auth.getUserLogged();
-        }
-    }
+    
 };
 
 </script>

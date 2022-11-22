@@ -56,41 +56,7 @@ onMounted(async () => {
       items.value = response.data
       console.log(items)
     })
+  Cookies.get('userLogged')
+    console.log(Cookies.value)
 })
-
-/* export default {
-   name: "App",
-  data() {
-    return {
-      items: {}
-    };
-  },
-  async created() {
-    try {
-      const res = await axios.get("http://127.0.0.1:9999/candidatos");
-      this.items = res.data
-    } catch (error) {
-      console.log(error);
-    }
-  },
-}; */
-
-
-/* export default {
-  date() {
-    return {
-      items: null
-    }
-  },
-  mounted() {
-    this.getCandidatos();
-  },
-  methods: {
-    getCandidatos() {
-      axios.get("http://127.0.0.1:9999/candidatos").then(response => {
-        this.items = response.data
-      }).catch(e => console.log(e))
-    }
-  }
-} */
 </script>
