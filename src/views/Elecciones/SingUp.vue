@@ -32,15 +32,9 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
                                 required>
                         </div>
-                        <div>
-                            <label for="repPassword" class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Repetir Contraseña</label>
-                            <input type="password" id="repPassword" v-model="repcontrasena" placeholder="Crea una contraseña segura"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
-                                required>
-                        </div>
 
-                        <button type="submit"
-                            class="w-full btn-brand">Regístrate</button>
+                        <button type="submit" class="w-full btn-brand">Regístrate</button>
+                        
                         <p class="text-sm text-center font-light text-gray-500 dark:text-gray-400">
                             ¿Ya tienes una cuenta? <router-link to="login"
                                 class="font-medium text-slate-600 hover:underline dark:text-slate-500">Inicia Sesión
@@ -60,17 +54,16 @@ export default {
         seudonimo: "",
         correo: "",
         contrasena: "",
-        repcontrasena: ""
+        error: false
     }),
-    methods: {
-        async SignUp() {
+    async SignUp() {
             try {
-                await auth.register(this.correo, this.contrasena);
-                this.$router.push("/about");
+                await auth.singup(this.seudonimo, this.correo, this.contrasena);
+                this.$router.push("/dashboard");
             } catch (error) {
                 console.log(error);
+                this.error = true;
             }
         }
-    }
 };
 </script>
