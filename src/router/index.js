@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from "../views/Elecciones/Login.vue"
 import SingUp from "../views/Elecciones/SingUp.vue";
+import CrearCandidato from "../views/Elecciones/admin/CrearCandidato.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: "/singup",
       name: "singup",
       component: SingUp,
+    },
+    {
+      path: "/crearcandidato",
+      name: "crearcandidato",
+      component: CrearCandidato,
     },
     {
       path: "/about",
