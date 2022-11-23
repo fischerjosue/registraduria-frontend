@@ -9,6 +9,7 @@
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/about">Nosotros</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/login">Elecciones</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/dashboarduser">Usuario</RouterLink>
+      <RouterLink class="hover:text-gray-600 focus:text-black" to="/test">Pruebas</RouterLink>
       <a v-if="coki" href="">usuario</a>
     </nav>
   </header>

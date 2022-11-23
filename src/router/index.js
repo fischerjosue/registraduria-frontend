@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Login from "../views/Elecciones/Login.vue"
 import SingUp from "../views/Elecciones/SingUp.vue";
 import DashBoardUser from "../views/Elecciones/user/Dashboard.vue";
+import Test from "../views/Elecciones/user/Test.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/dashboarduser",
       name: "dashboarduser",
       component: DashBoardUser,
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: Test,
     },
     {
       path: "/about",
