@@ -1,4 +1,6 @@
 <template>
+
+
   <header class="flex items-center justify-between z-50 py-2 px-4 border-b bg-white">
     <RouterLink to="/"><img class="w-28" src="@/assets/logo.png" alt="Registraduría Nacional del Estado Civil" />
     </RouterLink>
