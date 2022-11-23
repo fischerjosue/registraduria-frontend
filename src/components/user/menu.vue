@@ -1,5 +1,5 @@
 <template>
     <div>
-menu usuario        
+        menu usuario
     </div>
 </template>

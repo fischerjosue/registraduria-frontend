@@ -48,22 +48,5 @@
 </template>
 
 <script>
-import auth from "@/logic/auth";
-export default {
-    data: () => ({
-        seudonimo: "",
-        correo: "",
-        contrasena: "",
-        error: false
-    }),
-    async SignUp() {
-            try {
-                await auth.singup(this.seudonimo, this.correo, this.contrasena);
-                this.$router.push("/dashboard");
-            } catch (error) {
-                console.log(error);
-                this.error = true;
-            }
-        }
-};
+
 </script>

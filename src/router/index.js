@@ -2,7 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from "../views/Elecciones/Login.vue"
 import SingUp from "../views/Elecciones/SingUp.vue";
-import DashBoardUser from "../views/Elecciones/user/Dashboard.vue";
+import DashBoard from "../views/Elecciones/Dashboard.vue";
+
+/* Candidatos */
+import CandidatosAll from "../views/Elecciones/admin/Candidatos/CandidatosAll.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,18 +17,23 @@ const router = createRouter({
     },
     {
       path: "/login",
-      name: "login",
+      name: "logIn",
       component: Login,
     },
     {
       path: "/singup",
-      name: "singup",
+      name: "singUp",
       component: SingUp,
     },
     {
-      path: "/dashboarduser",
-      name: "dashboarduser",
-      component: DashBoardUser,
+      path: "/dashboard",
+      name: "dashboard",
+      component: DashBoard,
+    },
+    {
+      path: "/candidatos",
+      name: "candidatos",
+      component: CandidatosAll,
     },
     {
       path: "/about",
