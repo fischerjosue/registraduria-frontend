@@ -33,7 +33,7 @@
                                 required>
                         </div>
 
-                        <button type="submit" class="w-full btn-brand">Regístrate</button>
+                        <button type="submit" class="w-full text-white bg-slate-600 hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-3xl text-sm px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">Regístrate</button>
                         
                         <p class="text-sm text-center font-light text-gray-500 dark:text-gray-400">
                             ¿Ya tienes una cuenta? <router-link to="login"
