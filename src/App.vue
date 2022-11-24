@@ -14,7 +14,7 @@
   </div>
 
   <footer
-    class="p-4 bg-white rounded-t-3xl shadow md:px-6 md:py-2 dark:bg-gray-900">
+    class="2xl:container 2xl:mx-auto 2xl:fixed 2xl:inset-x-0 2xl:bottom-0 p-4 bg-white rounded-t-3xl shadow md:px-6 md:py-2 dark:bg-gray-900">
     <div class="sm:flex sm:items-center sm:justify-between">
       <RouterLink to="/"><a class="flex items-center mb-4 sm:mb-0">
           <img src="@/assets/logo.png" class="w-20" alt="Logo de la Registraduría Nacional del Estado Civíl" />
