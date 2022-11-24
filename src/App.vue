@@ -3,7 +3,6 @@
     <RouterLink to="/"><img class="w-28" src="@/assets/logo.png" alt="Logo de la Registraduría Nacional del Estado Civil"/></RouterLink>
     <nav class="flex gap-4 font-semibold">
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/">Inicio</RouterLink>
-      <RouterLink class="hover:text-gray-600 focus:text-black" to="/about">Nosotros</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/dashboard">Elecciones</RouterLink>
     </nav>
   </header>
@@ -12,7 +11,7 @@
     <router-view v-on:completedLogIn="completedLogIn" v-on:completedSignUp="completedSignUp" v-on:logOut="logOut"></router-view>
   </div>
   
-  <footer class=" container mx-auto fixed inset-x-0 bottom-0 p-4 bg-white rounded-3xl shadow md:px-6 md:py-4 dark:bg-gray-900">
+  <footer class="p-4 bg-white rounded-3xl shadow md:px-6 md:py-4 dark:bg-gray-900">
       <div class="sm:flex sm:items-center sm:justify-between">
         <RouterLink to="/"><a class="flex items-center mb-4 sm:mb-0">
               <img src="@/assets/logo.png" class="w-20" alt="Logo de la Registraduría Nacional del Estado Civíl"/>
@@ -22,14 +21,11 @@
                 <RouterLink class="hover:text-gray-600 focus:text-black mr-4 md:mr-6" to="/">Inicio</RouterLink>
               </li>
               <li>
-                <RouterLink class="hover:text-gray-600 focus:text-black mr-4 md:mr-6" to="/about">Nosotros</RouterLink>
-              </li>
-              <li>
                 <RouterLink class="hover:text-gray-600 focus:text-black mr-4 md:mr-6" to="/dashboard">Elecciones</RouterLink>
               </li>
           </ul>
       </div>
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4" />
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4"/>
       <p class="block text-base text-gray-500 sm:text-center dark:text-gray-400"><i class="bi bi-github" style="font-size: 1.5rem; color: gray; padding-right: 5px; vertical-align: bottom;"></i><a href="https://github.com/iamjosuefischer/registraduria-frontend" class="hover:underline">Repositorio de GitHub</a>
       </p>
   </footer>

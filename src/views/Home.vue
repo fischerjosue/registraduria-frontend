@@ -1,16 +1,13 @@
 <template>
-    <!-- Container for demo purpose -->
 <div class="container my-24 px-6 mx-auto">
-
-<!-- Section: Design Block -->
 <section class="mb-32 text-gray-800">
-  <!-- Jumbotron -->
+
   <div class="container mx-auto xl:px-32 text-center lg:text-left">
     <div class="grid lg:grid-cols-2 items-center">
       <div class="mb-12 lg:mb-0">
         <div class="block rounded-3xl shadow-lg px-6 py-12 md:px-12 lg:-mr-14"
           style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(20px)">
-          <h2 class="text-3xl font-bold mb-6">Votaciones 2022</h2>
+          <h2 class="text-3xl font-bold mb-6">Elecciones 2022</h2>
           <p class="text-gray-500 mb-6 pb-2 lg:pb-0 text-justify">
             La Registraduría Nacional de Colombia es una entidad con autonomía administrativa, contractual y presupuestal, 
             organizada de manera desconcentrada, que tiene a su cargo el registro de la vida civil e identificación de los colombianos
@@ -27,16 +24,13 @@
 
       <div>
         <img src="../assets/elecciones.jpg" class="w-full rounded-3xl shadow-lg"
-          alt="" />
+          alt="Elecciones 2022"/>
       </div>
     </div>
   </div>
-  <!-- Jumbotron -->
 </section>
-<!-- Section: Design Block -->
 
 </div>
-<!-- Container for demo purpose -->
 </template>
 
 <script>
