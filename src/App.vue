@@ -13,12 +13,12 @@
     <router-view v-on:completedLogIn="completedLogIn" v-on:completedSignUp="completedSignUp" v-on:logOut="logOut"></router-view>
   </div>
   
-  <footer class="p-4 bg-white rounded-3xl shadow md:px-6 md:py-8 dark:bg-gray-900">
+  <footer class=" container mx-auto fixed inset-x-0 bottom-0 p-4 bg-white rounded-3xl shadow md:px-6 md:py-4 dark:bg-gray-900">
       <div class="sm:flex sm:items-center sm:justify-between">
         <RouterLink to="/"><a class="flex items-center mb-4 sm:mb-0">
-              <img src="@/assets/logo.png" class="w-28" alt="Logo de la Registraduría Nacional del Estado Civíl"/>
+              <img src="@/assets/logo.png" class="w-20" alt="Logo de la Registraduría Nacional del Estado Civíl"/>
           </a></RouterLink>
-          <ul class="flex flex-wrap items-center mb-6 text-base font-semibold">
+          <ul class="flex flex-wrap items-center mb-6 text-sm font-semibold">
               <li>
                 <RouterLink class="hover:text-gray-600 focus:text-black mr-4 md:mr-6" to="/">Inicio</RouterLink>
               </li>
@@ -30,7 +30,7 @@
               </li>
           </ul>
       </div>
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4" />
       <p class="block text-base text-gray-500 sm:text-center dark:text-gray-400"><i class="bi bi-github" style="font-size: 1.5rem; color: gray; padding-right: 5px; vertical-align: bottom;"></i><a href="https://github.com/iamjosuefischer/registraduria-frontend" class="hover:underline">Repositorio de GitHub</a>
       </p>
   </footer>
