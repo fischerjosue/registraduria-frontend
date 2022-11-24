@@ -59,6 +59,11 @@ const router = createRouter({
       component: Candidatos,
     },
     {
+      path: "/mesas",
+      name: "mesas",
+      component: Mesas,
+    },
+    {
       path: "/about",
       name: "about",
       // route level code-splitting

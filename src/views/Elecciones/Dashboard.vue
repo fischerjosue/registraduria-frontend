@@ -4,7 +4,7 @@
             <nav class="grid">
                 <router-link to="">Resultado</router-link>
                 <router-link to="candidatos">Candidatos</router-link>
-                <router-link to="">Mesas</router-link>
+                <router-link to="mesas">Mesas</router-link>
 
             </nav>
         </aside>
