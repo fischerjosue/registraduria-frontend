@@ -8,11 +8,11 @@
                         class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Registrarse
                     </h1>
-                    <form class="space-y-4 md:space-y-6" v-on:submit.prevent="SignUp">
+                    <form class="space-y-4 md:space-y-6" v-on:submit.prevent="processSignUpUser">
                         <div>
                             <label for="nombre"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
-                            <input type="text" name="nombre" v-model="seudonimo" placeholder="Escribe tu nombre"
+                            <input type="text" name="nombre" v-model="user.seudonimo" placeholder="Escribe tu nombre"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
                                 required>
                         </div>
@@ -20,21 +20,22 @@
                             <label for="email"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Correo
                                 electrónico</label>
-                            <input type="email" id="email" v-model="correo"
+                            <input type="email" id="email" v-model="user.correo"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
                                 placeholder="Escribe tu correo electrónico" required>
                         </div>
                         <div>
                             <label for="password"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
-                            <input type="password" id="password" v-model="contrasena"
+                            <input type="password" id="password" v-model="user.contrasena"
                                 placeholder="Crea una contraseña segura"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
                                 required>
                         </div>
 
-                        <button type="submit" class="w-full text-white bg-slate-600 hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-3xl text-sm px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">Regístrate</button>
-                        
+                        <button type="submit"
+                            class="w-full text-white bg-slate-600 hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-3xl text-sm px-5 py-2.5 text-center dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800">Regístrate</button>
+
                         <p class="text-sm text-center font-light text-gray-500 dark:text-gray-400">
                             ¿Ya tienes una cuenta? <router-link to="login"
                                 class="font-medium text-slate-600 hover:underline dark:text-slate-500">Inicia Sesión
@@ -48,5 +49,43 @@
 </template>
 
 <script>
-
+import axios from 'axios';
+export default {
+    data: function () {
+        return {
+            user: {
+                seudonimo: "",
+                correo: "",
+                contrasena: ""
+            }
+        }
+    },
+    methods: {
+        validations() {
+            return {
+                seudonimo: { required }, // Matches this.firstName
+                correo: { required }, // Matches this.lastName
+                contrasena: { required, email } // Matches this.contact.email
+            }
+        },
+        processSignUpUser: function () {
+            axios
+                .post("http://127.0.0.1:7777/singup",
+                    this.user, { headers: {} }
+                )
+                .then((result) => {
+                    let dataLogIn = {
+                        username: this.user.correo,
+                        token: result.data
+                    }
+                    console.log(dataLogIn.token)
+                    this.$emit('completedLogIn', dataLogIn)
+                })
+                .catch((error) => {
+                    if (error.response.status == "400")
+                        alert("Error en la creación del usuario.");
+                });
+        },
+    }
+}
 </script>
