@@ -5,7 +5,6 @@
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/">Inicio</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/about">Nosotros</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/dashboard">Elecciones</RouterLink>
-      <a v-if="coki" href="">usuario</a>
     </nav>
   </header>
 
