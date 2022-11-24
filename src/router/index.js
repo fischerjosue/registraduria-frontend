@@ -23,7 +23,7 @@ import ActualizarPartido from "../views/Elecciones/Partidos/ActualizarPartido.vu
 import InfoPartido from "../views/Elecciones/Partidos/InfoPartido.vue";
 
 /* Resultados x Canndidato */
-import Resultados from "../views/Elecciones/Resultado-Candidato/Resultados.vue";
+import ResultadosCandidaro from "../views/Elecciones/Resultado-Candidato/Resultados.vue";
 import NuevoResultado from "../views/Elecciones/Resultado-Candidato/NuevoResultado.vue";
 
 /* Resultados x Mesa */
@@ -59,9 +59,74 @@ const router = createRouter({
       component: Candidatos,
     },
     {
+      path: "/nuevocandidato",
+      name: "nuevocandidato",
+      component: NuevoCandidato,
+    },
+    {
+      path: "/actualizarcandidato",
+      name: "actualizarcandidato",
+      component: ActualizarCandidato,
+    },
+    {
+      path: "/infocandidato",
+      name: "infocandidato",
+      component: InfoCandidato,
+    },
+    {
       path: "/mesas",
       name: "mesas",
       component: Mesas,
+    },
+    {
+      path: "/nuevamesa",
+      name: "nuevamesa",
+      component: NuevaMesa,
+    },
+    {
+      path: "/actualizarmesa",
+      name: "actualizarmesa",
+      component: ActualizarMesa,
+    },
+    {
+      path: "/infomesa",
+      name: "infomesa",
+      component: InfoMesa,
+    },
+    {
+      path: "/partidos",
+      name: "partidos",
+      component: Partidos,
+    },
+    {
+      path: "/nuevopartido",
+      name: "nuevopartido",
+      component: NuevoPartido,
+    },
+    {
+      path: "/actualizarpartido",
+      name: "actualizarpartido",
+      component: ActualizarPartido,
+    },
+    {
+      path: "/infopartido",
+      name: "infopartido",
+      component: InfoPartido,
+    },
+    {
+      path: "/resultadoscandidato",
+      name: "resultadoscandidato",
+      component: ResultadosCandidaro,
+    },
+    {
+      path: "/nuevoresultadocandiddato",
+      name: "nuevoresultadocandiddato",
+      component: NuevoResultado,
+    },
+    {
+      path: "/resultadosmesa",
+      name: "resultadosmesa",
+      component: ResultadosMesa,
     },
     {
       path: "/about",

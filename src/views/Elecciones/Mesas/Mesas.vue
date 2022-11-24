@@ -63,7 +63,7 @@ export default {
             
             const options = {
                 method: 'GET',
-                url: 'http://127.0.0.1:9999/mesa',
+                url: 'http://127.0.0.1:7777/mesa',
                 headers: {
                     Authorization: `Bearer ${localStorage.token}`
                 }
