@@ -6,17 +6,31 @@
             
             <nav class="flex-col">
                 
-                <a v-on:click="mostrarImagen" href="#">Partidos inscritos</a> 
+                <a v-on:click="mostrarPartidos=true" href="#">Partidos inscritos</a> 
                 
                 <br>
-                <a href="#">Candidatos</a> 
+                <a v-on:click="mostrarPartidos=true" href="#">Candidatos</a> 
+                
                 <br>
-                <a href="#">Resulados</a>
+                <a v-on:click="mostrarPartidos=true" href="#">Resulados</a> 
+                
             
             </nav>
-           
+
         </aside>
+
+        <div id="app" v-if="mostrarPartidos">
+            <img src="@/assets/logo.png"> Este es un mensaje de prueba para partidos inscritos
+        </div>
+        <div id="app" v-if="mostrarInscritos">
+            <img src="@/assets/logo.png"> Este es un mensaje de prueba para candidatos inscritos
+        </div>
+        <div id="app" v-if="mostrarResultados">
+            <img src="@/assets/logo.png"> Este es un mensaje de prueba para resultados
+        </div>
     </main>
+
+
 
 
 
@@ -36,7 +50,8 @@ export default {
 const app={
     data() {
         return{
-            mostrarImagen: false
+            mostrarPartidos: false
+
         }
     }
 }
