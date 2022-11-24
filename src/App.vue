@@ -1,7 +1,6 @@
 <template>
   <header class="flex items-center justify-between z-50 py-2 px-4 border-b bg-white">
-    <RouterLink to="/"><img class="w-28" src="@/assets/logo.png" alt="Registraduría Nacional del Estado Civil" />
-    </RouterLink>
+    <RouterLink to="/"><img class="w-28" src="@/assets/logo.png" alt="Logo de la Registraduría Nacional del Estado Civil"/></RouterLink>
     <nav class="flex gap-4 font-semibold">
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/">Inicio</RouterLink>
       <RouterLink class="hover:text-gray-600 focus:text-black" to="/about">Nosotros</RouterLink>
@@ -11,12 +10,31 @@
   </header>
 
   <div>
-    <router-view v-on:completedLogIn="completedLogIn" v-on:completedSignUp="completedSignUp" v-on:logOut="logOut">
-    </router-view>
+    <router-view v-on:completedLogIn="completedLogIn" v-on:completedSignUp="completedSignUp" v-on:logOut="logOut"></router-view>
   </div>
-
+  
+  <footer class="p-4 bg-white rounded-3xl shadow md:px-6 md:py-8 dark:bg-gray-900">
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <RouterLink to="/"><a class="flex items-center mb-4 sm:mb-0">
+              <img src="@/assets/logo.png" class="w-28" alt="Logo de la Registraduría Nacional del Estado Civíl"/>
+          </a></RouterLink>
+          <ul class="flex flex-wrap items-center mb-6 text-base font-semibold">
+              <li>
+                <RouterLink class="hover:text-gray-600 focus:text-black mr-4 md:mr-6" to="/">Inicio</RouterLink>
+              </li>
+              <li>
+                <RouterLink class="hover:text-gray-600 focus:text-black mr-4 md:mr-6" to="/about">Nosotros</RouterLink>
+              </li>
+              <li>
+                <RouterLink class="hover:text-gray-600 focus:text-black mr-4 md:mr-6" to="/dashboard">Elecciones</RouterLink>
+              </li>
+          </ul>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <p class="block text-base text-gray-500 sm:text-center dark:text-gray-400"><i class="bi bi-github" style="font-size: 1.5rem; color: gray; padding-right: 5px; vertical-align: bottom;"></i><a href="https://github.com/iamjosuefischer/registraduria-frontend" class="hover:underline">Repositorio de GitHub</a>
+      </p>
+  </footer>
 </template>
-
 
 <script>
 export default {
@@ -58,7 +76,7 @@ export default {
     },
 
     loadSignUp: function () {
-      this.$router.push("/singup")
+      this.$router.push("/signup")
     },
 
     completedLogIn: function (data) {

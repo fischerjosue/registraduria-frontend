@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from "../views/Elecciones/Login.vue"
-import SingUp from "../views/Elecciones/SingUp.vue";
+import SignUp from "../views/Elecciones/SignUp.vue";
 import Dashboard from "../views/Elecciones/Dashboard.vue";
 
 /* Candidatos */
@@ -44,9 +44,9 @@ const router = createRouter({
       component: Login,
     },
     {
-      path: "/singup",
-      name: "singUp",
-      component: SingUp,
+      path: "/signup",
+      name: "signUp",
+      component: SignUp,
     },
     {
       path: "/dashboard",
