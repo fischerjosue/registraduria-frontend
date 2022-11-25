@@ -4,7 +4,8 @@
         alt="Logo de la Registraduría Nacional del Estado Civil" /></RouterLink>
     <nav class="flex gap-4 font-semibold">
       <RouterLink class="hover:text-blue-700 focus:text-blue-700" to="/">Inicio</RouterLink>
-      <RouterLink class="hover:text-blue-700 focus:text-blue-700" to="/dashboard">Elecciones</RouterLink>
+      <RouterLink class="hover:text-blue-700 focus:text-blue-700" to="dashboard">Elecciones</RouterLink>
+      <button class="hover:text-blue-700 focus:text-blue-700" v-if="is_auth" v-on:click="logOut">Salir</button>
     </nav>
   </header>
 
@@ -14,7 +15,7 @@
   </div>
 
   <footer
-    class="2xl:container 2xl:mx-auto 2xl:fixed 2xl:inset-x-0 2xl:bottom-0 p-4 bg-white rounded-t-3xl shadow md:px-6 md:py-2 dark:bg-gray-900">
+    class="p-4 bg-white rounded-t-3xl shadow md:px-6 md:py-2 dark:bg-gray-900">
     <div class="sm:flex sm:items-center sm:justify-between">
       <RouterLink to="/"><a class="flex items-center mb-4 sm:mb-0">
           <img src="@/assets/logo.png" class="w-20" alt="Logo de la Registraduría Nacional del Estado Civíl" />
@@ -24,7 +25,7 @@
           <RouterLink class="hover:text-blue-700 focus:text-blue-700 mr-4 md:mr-6" to="/">Inicio</RouterLink>
         </li>
         <li>
-          <RouterLink class="hover:text-blue-700 focus:text-blue-700 mr-4 md:mr-6" to="/dashboard">Elecciones
+          <RouterLink class="hover:text-blue-700 focus:text-blue-700 mr-4 md:mr-6" to="dashboard">Elecciones
           </RouterLink>
         </li>
       </ul>
@@ -41,7 +42,8 @@ export default {
   name: 'App',
   data: function () {
     return {
-      is_auth: false
+      is_auth: false,
+      is_admin: false
     }
   },
 
@@ -52,17 +54,17 @@ export default {
     verifyAuth: function () {
       this.is_auth = localStorage.getItem("isAuth") || false;
       if (this.is_auth == false)
-        this.$router.push("/login");
+        this.$router.push({ name: "logIn" });
       else
-        this.$router.push("/dashboard");
+        this.$router.push({ name: "dashboard" });
     },
 
     loadAccount: function () {
-      this.$router.push("/dashboard");
+      this.$router.push({ name: "dashboard" });
     },
 
     loadHome: function () {
-      this.$router.push("/dashboard");
+      this.$router.push({ name: "dashboard" });
     },
 
     logOut: function () {
@@ -72,11 +74,11 @@ export default {
     },
 
     loadLogIn: function () {
-      this.$router.push("/login")
+      this.$router.push({ name: "logIn" })
     },
 
     loadSignUp: function () {
-      this.$router.push("/signup")
+      this.$router.push({ name: "signUp"})
     },
 
     completedLogIn: function (data) {
@@ -90,6 +92,7 @@ export default {
 
     completedSignUp: function (data) {
       alert("Registro Exitoso");
+      this.completedLogIn(data)
       // const formregistro = document.getElementById("formRegistro")
       // formregistro.reset();
       // this.completedLogIn(data);

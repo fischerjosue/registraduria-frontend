@@ -8,7 +8,7 @@
                         class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Registrarse
                     </h1>
-                    <form class="space-y-4 md:space-y-6" v-on:submit.prevent="processSignUpUser">
+                    <form class="space-y-4 md:space-y-6" id="formRegistro" v-on:submit.prevent="processSignUpUser">
                         <div>
                             <label for="nombre"
                                 class="block mb-2 pl-1 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
@@ -79,7 +79,7 @@ export default {
                         token: result.data
                     }
                     console.log(dataLogIn.token)
-                    this.$emit('completedLogIn', dataLogIn)
+                    this.$emit('completedSignUp', dataLogIn)
                 })
                 .catch((error) => {
                     if (error.response.status == "400")
