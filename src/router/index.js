@@ -4,6 +4,7 @@ import Login from "../views/Elecciones/Login.vue"
 import SignUp from "../views/Elecciones/SignUp.vue";
 import Dashboard from "../views/Elecciones/Dashboard.vue";
 import AsignarRolUsuario from "../views/Admin/AsignarRolUsuario.vue";
+import AsignarCandidatoPartido from "../views/Admin/AsignarCandidatoPartido.vue";
 
 /* Candidatos */
 import Candidatos from "../views/Elecciones/Candidatos/Candidatos.vue";
@@ -49,6 +50,11 @@ const router = createRouter({
       path: "/asignarrolusuario",
       name: "asignarrolusuario",
       component: AsignarRolUsuario,
+    },
+    {
+      path: "/asignarcandidatopartido",
+      name: "asignarcandidatopartido",
+      component: AsignarCandidatoPartido,
     },
     {
       path: "/candidatos",

@@ -41,6 +41,9 @@
                 </template>
                 <list-group>
                     <list-group-item>
+                        <router-link class="block py-2 px-4 " to="asignarcandidatopartido">Asignar Candidato a Partido</router-link>
+                    </list-group-item>
+                    <list-group-item>
                         <router-link class="block py-2 px-4 " to="asignarrolusuario">Asignar Rol a Usuario</router-link>
                     </list-group-item>
                 </list-group>

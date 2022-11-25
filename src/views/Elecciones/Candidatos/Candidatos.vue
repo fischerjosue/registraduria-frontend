@@ -172,7 +172,7 @@ export default {
                 cedula: "",
                 numero_resolucion: "",
             },
-            items: "",
+            items: [],
             loaded: false,
             ModalInfo: false,
             ModalUpdate: false,
