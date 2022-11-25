@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Login from "../views/Elecciones/Login.vue"
 import SignUp from "../views/Elecciones/SignUp.vue";
 import Dashboard from "../views/Elecciones/Dashboard.vue";
+import AsignarRolUsuario from "../views/Admin/AsignarRolUsuario.vue";
 
 /* Candidatos */
 import Candidatos from "../views/Elecciones/Candidatos/Candidatos.vue";
@@ -52,6 +53,11 @@ const router = createRouter({
       path: "/dashboard",
       name: "dashboard",
       component: Dashboard,
+    },
+    {
+      path: "/asignarrolusuario",
+      name: "asignarrolusuario",
+      component: AsignarRolUsuario,
     },
     {
       path: "/candidatos",

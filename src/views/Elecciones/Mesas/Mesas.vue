@@ -40,7 +40,7 @@ import jwt_decode from "jwt-decode";
 export default {
     data: function () {
         return {
-            username: localStorage.getItem("user_id") || "none",
+            userid: localStorage.getItem("user_id") || "none",
             items: "",
             loaded: false,
         };

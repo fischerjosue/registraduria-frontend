@@ -5,6 +5,7 @@
                 <router-link to="">Resultado</router-link>
                 <router-link to="candidatos">Candidatos</router-link>
                 <router-link to="mesas">Mesas</router-link>
+                <router-link to="asignarrolusuario">Arignar Rol a Usuario</router-link>
             </nav>
         </aside>
     </main>
@@ -15,7 +16,7 @@ export default {
 name: "home",
     data: function () {
         return {
-            username: localStorage.getItem("user_id") || "none",
+            userid: localStorage.getItem("user_id") || "none",
             items: "",
             loaded: false,
         };
