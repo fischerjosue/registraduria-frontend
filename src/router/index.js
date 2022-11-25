@@ -7,9 +7,6 @@ import AsignarRolUsuario from "../views/Admin/AsignarRolUsuario.vue";
 
 /* Candidatos */
 import Candidatos from "../views/Elecciones/Candidatos/Candidatos.vue";
-import NuevoCandidato from "../views/Elecciones/Candidatos/NuevoCandidato.vue";
-import ActualizarCandidato from "../views/Elecciones/Candidatos/ActualizarCandidato.vue";
-import InfoCandidato from "../views/Elecciones/Candidatos/InfoCandidato.vue";
 
 /* Mesas */
 import Mesas from "../views/Elecciones/Mesas/Mesas.vue";
@@ -60,21 +57,6 @@ const router = createRouter({
       path: "/candidatos",
       name: "candidatos",
       component: Candidatos,
-    },
-    {
-      path: "/nuevocandidato",
-      name: "nuevocandidato",
-      component: NuevoCandidato,
-    },
-    {
-      path: "/actualizarcandidato",
-      name: "actualizarcandidato",
-      component: ActualizarCandidato,
-    },
-    {
-      path: "/infocandidato",
-      name: "infocandidato",
-      component: InfoCandidato,
     },
     {
       path: "/mesas",
