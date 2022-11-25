@@ -1,5 +1,6 @@
 <template>
-    <div class="overflow-x-auto mt-4 relative shadow-sm sm:rounded-lg">
+    <Menu />
+    <div class="overflow-x-auto my-4 relative shadow-sm sm:rounded-lg">
         <table class="w-full text-xs md:text-sm text-center text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -46,13 +47,13 @@
 
 
 <script>
+import Menu from "@/components/menu.vue"
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 
 export default {
     data: function () {
         return {
-            userid: localStorage.getItem("user_id") || "none",
             items: "",
             loaded: false,
         };
@@ -91,7 +92,7 @@ export default {
             });
         },
     },
-    
+    components: {Menu},
     created: async function () {
         this.getData();
     },

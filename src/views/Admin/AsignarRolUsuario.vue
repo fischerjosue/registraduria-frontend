@@ -1,4 +1,5 @@
 <template>
+    <Menu />
     <div class="w-1/2 my-4 mx-auto">
         <form action="" v-on:submit.prevent="AsignarRolUsuario">
             <label for="usuario" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -24,6 +25,7 @@
 </template>
 
 <script>
+import Menu from "@/components/menu.vue"
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 
@@ -84,6 +86,6 @@ export default {
             console.error(error);
         });
     },
-    components: {},
+    components: { Menu },
 };
 </script>

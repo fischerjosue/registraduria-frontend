@@ -1,6 +1,6 @@
 <template>
     <Menu />
-    <div class="overflow-x-auto mt-4 relative shadow-sm sm:rounded-lg">
+    <div class="overflow-x-auto my-4 relative shadow-sm sm:rounded-lg">
         <table class="w-full text-xs md:text-sm text-center text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -12,6 +12,9 @@
                     </th>
                     <th scope="col" class="py-3 px-6">
                         Cantidad Inscritos
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Acciones
                     </th>
                 </tr>
             </thead>
@@ -27,10 +30,16 @@
                     <td class="py-4 px-6">
                         {{ item.cantidad_inscritos }}
                     </td>
+                    <td>
+
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+
+    
 </template>
 
 
