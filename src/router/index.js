@@ -13,9 +13,6 @@ import InfoCandidato from "../views/Elecciones/Candidatos/InfoCandidato.vue";
 
 /* Mesas */
 import Mesas from "../views/Elecciones/Mesas/Mesas.vue";
-import NuevaMesa from "../views/Elecciones/Mesas/NuevaMesa.vue";
-import ActualizarMesa from "../views/Elecciones/Mesas/ActualizarMesa.vue";
-import InfoMesa from "../views/Elecciones/Mesas/InfoMesa.vue";
 
 /* Partidos */
 import Partidos from "../views/Elecciones/Partidos/Partidos.vue";
@@ -83,21 +80,6 @@ const router = createRouter({
       path: "/mesas",
       name: "mesas",
       component: Mesas,
-    },
-    {
-      path: "/nuevamesa",
-      name: "nuevamesa",
-      component: NuevaMesa,
-    },
-    {
-      path: "/actualizarmesa",
-      name: "actualizarmesa",
-      component: ActualizarMesa,
-    },
-    {
-      path: "/infomesa",
-      name: "infomesa",
-      component: InfoMesa,
     },
     {
       path: "/partidos",
