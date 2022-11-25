@@ -13,9 +13,6 @@ import Mesas from "../views/Elecciones/Mesas/Mesas.vue";
 
 /* Partidos */
 import Partidos from "../views/Elecciones/Partidos/Partidos.vue";
-import NuevoPartido from "../views/Elecciones/Partidos/NuevoPartido.vue";
-import ActualizarPartido from "../views/Elecciones/Partidos/ActualizarPartido.vue";
-import InfoPartido from "../views/Elecciones/Partidos/InfoPartido.vue";
 
 /* Resultados x Canndidato */
 import ResultadosCandidaro from "../views/Elecciones/Resultado-Candidato/Resultados.vue";
@@ -67,21 +64,6 @@ const router = createRouter({
       path: "/partidos",
       name: "partidos",
       component: Partidos,
-    },
-    {
-      path: "/nuevopartido",
-      name: "nuevopartido",
-      component: NuevoPartido,
-    },
-    {
-      path: "/actualizarpartido",
-      name: "actualizarpartido",
-      component: ActualizarPartido,
-    },
-    {
-      path: "/infopartido",
-      name: "infopartido",
-      component: InfoPartido,
     },
     {
       path: "/resultadoscandidato",
