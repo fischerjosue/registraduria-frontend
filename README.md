@@ -13,7 +13,7 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-Database-green?logo=mongodb)
 
 # FRONT-END DEL PROYECTO
-### VOTACIONES 2022
+### ELECCIONES 2022
 
 <br>
 
