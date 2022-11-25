@@ -1,6 +1,6 @@
 <template>
     <Menu />
-    <div class="w-1/2 my-4 mx-auto">
+    <div class="w-1/3 my-4 mx-auto">
         <form action="" v-on:submit.prevent="AsignarRolUsuario">
             <label for="usuario" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Selleccionar usuario
