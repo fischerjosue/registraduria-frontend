@@ -21,7 +21,7 @@
                         </router-link>
                     </list-group-item>
                     <list-group-item>
-                        <router-link class="block py-2 px-4 " to="resultadosmesa">Resultados x Mesa</router-link>
+                        <router-link class="block py-2 px-4 " to="resultadosmesa">Resultados x Partido</router-link>
                     </list-group-item>
                     <list-group-item>
                         <router-link class="block py-2 px-4 " to="nuevoresultadocandiddato">Nuevo Resultado Candidato

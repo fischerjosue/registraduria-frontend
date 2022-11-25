@@ -41,7 +41,7 @@
                         {{ item.numero_resolucion }}
                     </td>
                     <td class="py-4 px-6">
-                       <!--  {{ item.partido }} -->
+                        <!-- {{ item.partido.nombrepartido }} -->
                     </td>
                     <td class="py-4 px-6">
                         <button class="btn-yellow rounded-full"
