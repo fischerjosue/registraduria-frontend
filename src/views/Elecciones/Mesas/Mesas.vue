@@ -1,4 +1,5 @@
 <template>
+    <Menu />
     <div class="overflow-x-auto mt-4 relative shadow-sm sm:rounded-lg">
         <table class="w-full text-xs md:text-sm text-center text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -34,17 +35,20 @@
 
 
 <script>
+import Menu from '@/components/Menu.vue'
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 
 export default {
     data: function () {
         return {
+            namePage: "Listado de mesas",
             userid: localStorage.getItem("user_id") || "none",
             items: "",
             loaded: false,
         };
     },
+    components: {Menu},
     methods: {
         verifyAuth: function () {
             this.is_auth = localStorage.getItem("isAuth") || false;
@@ -79,7 +83,7 @@ export default {
             });
         },
     },
-    components: {  },
+    
     created: async function () {
         this.getData();
     },

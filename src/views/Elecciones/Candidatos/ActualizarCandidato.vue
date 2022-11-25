@@ -1,12 +1,14 @@
 <template>
-
+<Menu/>
 </template>
 
 <script>
+import Menu from '@/components/Menu.vue'
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 
 export default {
+components: {Menu},
     data: function () {
         return {
             userid: localStorage.getItem("user_id") || "none",
@@ -48,7 +50,7 @@ export default {
             });
         },
     },
-    components: {  },
+    
     created: async function () {
         this.getData();
     },

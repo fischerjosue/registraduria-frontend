@@ -5,7 +5,6 @@
     <nav class="flex gap-4 font-semibold">
       <RouterLink class="hover:text-blue-700 focus:text-blue-700" to="/">Inicio</RouterLink>
       <RouterLink class="hover:text-blue-700 focus:text-blue-700" to="dashboard">Elecciones</RouterLink>
-      <button class="hover:text-blue-700 focus:text-blue-700" v-if="is_auth" v-on:click="logOut">Salir</button>
     </nav>
   </header>
 
@@ -47,8 +46,7 @@ export default {
     }
   },
 
-  components: {
-  },
+  components: {},
 
   methods: {
     verifyAuth: function () {

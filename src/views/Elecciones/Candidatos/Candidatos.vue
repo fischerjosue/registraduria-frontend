@@ -91,7 +91,7 @@ export default {
             });
         },
     },
-    components: {  },
+    
     created: async function () {
         this.getData();
     },
