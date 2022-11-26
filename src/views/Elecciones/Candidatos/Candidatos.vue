@@ -83,27 +83,27 @@
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre actual:
                             {{ itemMostar.nombre }}</label>
                         <input type="text" id="numero_candidatos" v-model="valor.nombre"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                     </div>
                     <div>
                         <label for="numero_candidatos"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido actual:
                             {{ itemMostar.apellido }}</label>
                         <input type="text" id="numero_candidatos" v-model="valor.apellido"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                     </div>
                     <div>
                         <label for="cand_insc"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cédula actual: {{ itemMostar.cedula }}</label>
                         <input type="text" id="cand_insc" v-model="valor.cedula"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                     </div>
                     <div>
                         <label for="numero_candidatos"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Resolución actual:
                             {{ itemMostar.numero_resolucion }}</label>
                         <input type="text" id="numero_candidatos" v-model="valor.numero_resolucion"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                     </div>
                     <button class="btn-primary rounded-full mt-4" type="submit">Actualizar registro</button>
                 </form>
